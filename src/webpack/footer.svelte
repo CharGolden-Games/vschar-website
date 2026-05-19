@@ -8,32 +8,49 @@ The footer that is on every page.
   let homepage = '<a class="pages" href="/">Homepage</a>'
   let pages = ['VS Char', "Chars Adventure", "Site Archive", "Blogs", "Credits", "Official Games"]
 
+  function print(v)
+  {
+    console.log(v)
+  }
+
   let pages_html = get_pages(gen_pagesArray())
   let promo = get_pages([`<a class="socials" href="https://yt.vschar-official.com" target="_blank" rel="noopener noreferrer" class="footer">My Youtube Channel</a>`,
         `<a class="socials" href="https://bsky.vschar-official.com" target="_blank" rel="noopener noreferrer" class="footer">My BlueSky Account</a>`,
         `<a class="socials" href="https://twitch.vschar-official.com" target="_blank" rel="noopener noreferrer" class="footer">My Twitch Channel</a>`,
         `<a class="socials" href="https://discord.vschar-official.com" target="_blank" rel="noopener noreferrer" class="footer">My Discord Server</a><br>`,])
 
-  function get_pageName(element:string)
-  {
-    return element.split(">")[1].split("<")[0]
-  }
-
   function gen_pagesArray():Array<string>
   {
     let array:Array<string> = []
     pages.forEach(page => {
         let pageToGet = ""
+        let finalPage = page
+        print(page)
         switch (page)
         {
-            case "VS Char": pageToGet = "/vschar";
-            case "Chars Adventure": pageToGet = "/charsadventure"; page = "Char's Adventure";
-            case "Site Archive": pageToGet = "https://old.vschar-official.com";
-            case "Official Games": pageToGet = "/games"
-            default: pageToGet = page.toLocaleLowerCase().replaceAll(" ", ""); // Not in this list.
-        }
+            case "VS Char":
+                pageToGet = "/vschar";
+                break;
 
-        array.push('<a class="pages" href="'+pageToGet+'">'+page+'</a>')
+            case "Chars Adventure":
+                pageToGet = "/charsadventure"; 
+                finalPage = "Char's Adventure";
+                break;
+
+            case "Site Archive":
+                pageToGet = "https://vschar-archive.netlify.app/";
+                break;
+
+            case "Official Games":
+                pageToGet = "/games";
+                break;
+
+            default:
+                pageToGet = page.toLocaleLowerCase().replaceAll(" ", ""); // Not in this list.
+        }
+        print(page)
+        print(pageToGet)
+        array.push('<a class="pages" href="'+pageToGet+'">'+finalPage+'</a>')
     });
 
     return array;
@@ -43,17 +60,18 @@ The footer that is on every page.
   {
     let finalHTML = ""
     let pos = 0
+    print(array)
     array.forEach(element => {
         if (element != "")
         {
-            pos++;
             if (page == element)
             {
                 element = homepage
             }
 
             finalHTML += element
-            if (pos < array.length) finalHTML += " | "
+            if (pos < array.length - 1) finalHTML += " | "
+            pos++;
         }
     });
 
