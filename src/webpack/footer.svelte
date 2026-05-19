@@ -5,19 +5,10 @@ The footer that is on every page.
 -->
 <script lang="ts">
   let { page = '' } = $props();
-  let homepage = '<a class="pages" href="/">Homepage</a>'
-  let pages = ['VS Char', "Chars Adventure", "Site Archive", "Blogs", "Credits", "Official Games"]
-
-  function print(v)
-  {
-    console.log(v)
-  }
-
+  let homepage = '<a class="pages" href="/">Homepage</a>';
+  let pages = ['VS Char', "Chars Adventure", "Site Archive", "Blogs", "Credits", "Official Games"];
   let pages_html = get_pages(gen_pagesArray())
-  let promo = get_pages([`<a class="socials" href="https://yt.vschar-official.com" target="_blank" rel="noopener noreferrer" class="footer">My Youtube Channel</a>`,
-        `<a class="socials" href="https://bsky.vschar-official.com" target="_blank" rel="noopener noreferrer" class="footer">My BlueSky Account</a>`,
-        `<a class="socials" href="https://twitch.vschar-official.com" target="_blank" rel="noopener noreferrer" class="footer">My Twitch Channel</a>`,
-        `<a class="socials" href="https://discord.vschar-official.com" target="_blank" rel="noopener noreferrer" class="footer">My Discord Server</a><br>`,])
+  let promo = get_pages([`<a class="socials" href="https://yt.vschar-official.com" target="_blank" rel="noopener noreferrer" class="footer">My Youtube Channel</a>`, `<a class="socials" href="https://bsky.vschar-official.com" target="_blank" rel="noopener noreferrer" class="footer">My BlueSky Account</a>`, `<a class="socials" href="https://twitch.vschar-official.com" target="_blank" rel="noopener noreferrer" class="footer">My Twitch Channel</a>`, `<a class="socials" href="https://discord.vschar-official.com" target="_blank" rel="noopener noreferrer" class="footer">My Discord Server</a><br>`,]);
 
   function gen_pagesArray():Array<string>
   {
@@ -54,6 +45,11 @@ The footer that is on every page.
     });
 
     return array;
+  }
+
+  function print(v:any)
+  {
+    console.log(v)
   }
 
   function get_pages(array:Array<string>)

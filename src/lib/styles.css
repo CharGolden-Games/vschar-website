@@ -73,7 +73,8 @@ a:hover {
   }
   
   body {
-    background-color: black;
+    background-image: url("/images/backgrounds/default/404.png");
+    background-size: cover;
     color: white;
     text-align: center;
     font-weight: bold;
