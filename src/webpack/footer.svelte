@@ -6,7 +6,7 @@ The footer that is on every page.
 <script lang="ts">
   let { page = '' } = $props();
   let homepage = '<a class="pages" href="/">Homepage</a>'
-  let pages = ['VS Char', "Char's Adventure", "Site Archive", "Blogs", "Credits", "Official Games"]
+  let pages = ['VS Char', "Chars Adventure", "Site Archive", "Blogs", "Credits", "Official Games"]
 
   let pages_html = get_pages(gen_pagesArray())
   let promo = get_pages([`<a class="socials" href="https://yt.vschar-official.com" target="_blank" rel="noopener noreferrer" class="footer">My Youtube Channel</a>`,
@@ -27,7 +27,7 @@ The footer that is on every page.
         switch (page)
         {
             case "VS Char": pageToGet = "/vschar";
-            case "Char's Adventure": pageToGet = "/charsadventure";
+            case "Chars Adventure": pageToGet = "/charsadventure"; page = "Char's Adventure";
             case "Site Archive": pageToGet = "https://old.vschar-official.com";
             case "Official Games": pageToGet = "/games"
             default: pageToGet = page.toLocaleLowerCase().replaceAll(" ", ""); // Not in this list.
