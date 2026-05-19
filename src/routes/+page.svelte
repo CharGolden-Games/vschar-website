@@ -3,8 +3,8 @@ import FooterClass from "../webpack/footer.svelte";
 </script>
 
 <main>
-    Yo Mum
-    <FooterClass />
+    VS Char Website Test.
+    <FooterClass page={""}/>
 </main>
 
 <style>
