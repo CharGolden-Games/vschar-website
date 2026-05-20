@@ -6,7 +6,7 @@
 
 <header>
     <title>
-        VS Char Website | Error Page
+        Char Golden Games Website | Error Page
     </title>
 </header>
 

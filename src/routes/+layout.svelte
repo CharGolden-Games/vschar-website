@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>VS Char Website | Homepage</title>
+	<title>Char Golden Games Website | Homepage</title>
 </svelte:head>
 
 {@render children()}
