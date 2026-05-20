@@ -37,7 +37,7 @@ The footer that is on every page.
                 break;
 
             default:
-                pageToGet = page.toLocaleLowerCase().replaceAll(" ", ""); // Not in this list.
+                pageToGet = '/' + page.toLocaleLowerCase().replaceAll(" ", ""); // Not in this list.
         }
         print(page)
         print(pageToGet)
