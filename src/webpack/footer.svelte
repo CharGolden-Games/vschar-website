@@ -106,7 +106,7 @@ The footer that is on every page.
     {
         color: #FF8800;
         margin: auto;
-        margin-top: 40px;
+        margin-top: 20px;
         max-height: 20px;
 
         &:hover {
@@ -128,7 +128,7 @@ The footer that is on every page.
     {
         color: #FFFFFF;
         margin: auto;
-        margin-top: 40px;
+        margin-top: 20px;
         max-height: 20px;
 
         &:link {
@@ -146,7 +146,7 @@ The footer that is on every page.
     
     .sitemap
     {
-        margin-top: 40px;
+        margin-top: 20px;
         margin-right: 40px;
         max-height: 20px;
     }
