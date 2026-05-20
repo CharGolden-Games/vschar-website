@@ -1,7 +1,25 @@
-/*
-This file contains global styling across all pages.
-*/
-@font-face {
+<script>
+    import { page } from "$app/state"
+    import FooterClass from "../webpack/footer.svelte";
+    let extPage = "ErrorPage"
+</script>
+
+<header>
+    <title>
+        VS Char Website | Error Page
+    </title>
+</header>
+
+<main class="ErrorPage mainBody">
+    Error!<br>
+
+    {page.status + " " +  page.error?.message}
+
+    <FooterClass page={extPage}/>
+</main>
+
+<style>
+    @font-face {
   font-family: funkin;
   src: url('/fonts/funkin.ttf');
 }
@@ -64,7 +82,10 @@ a:hover {
 .xx-small {font-size: xx-small;}
 
 .mainBody {
+    background-image: url("/images/backgrounds/default/404.png");
+    background-size: cover;
     color: black;
+    min-height: 100vh;
   }
   
   .dumbHeader {
@@ -73,7 +94,7 @@ a:hover {
   }
   
   body {
-    background-image: url("/images/backgrounds/default/main.png");
+    background-image: url("/images/backgrounds/default/404.png");
     background-size: cover;
     color: white;
     text-align: center;
@@ -83,3 +104,4 @@ a:hover {
     padding-bottom: 30vh;
     font-family: funkin;
   }
+</style>
